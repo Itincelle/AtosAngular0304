@@ -14,7 +14,7 @@ public displayBlock=false;
 
 public GettingNews(value){
   
-  this.newsDemande=this._mesNews.getNews(value)
+  this._mesNews.getNews(value).subscribe(data => this.newsDemande=data)
   this.displayBlock=true;
  
   } 

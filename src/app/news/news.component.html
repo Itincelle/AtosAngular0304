@@ -13,7 +13,8 @@
 
 <h2 *ngIf="displayBlock">Liste des News</h2>
 <ul *ngFor="let item of newsDemande">
-  <li>{{item.num}} {{item.Title}}</li>
+  <li>{{item | json }}</li>
+  <li>{{item.num}} {{item.Title}} . {{item.Contenue}}</li>
 </ul>
 
 

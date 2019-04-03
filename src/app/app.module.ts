@@ -8,6 +8,8 @@ import { ConvComponent } from './conv/conv.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
 import { NewsService } from './news.service';
+
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,8 @@ import { NewsService } from './news.service';
   imports: [
     BrowserModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [NewsService],
   bootstrap: [AppComponent]
