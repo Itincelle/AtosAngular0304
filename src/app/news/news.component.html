@@ -1,0 +1,20 @@
+ 
+  <form methode="get" action="">
+    <div class="form-group">
+    <label for="">Num news : </label>
+    <input class="form-control" type="number" name="numNews" #numNews [(ngModel)]="numN"><br>
+    </div>
+    <button type="submit" (click)="GettingNews(numNews.value)" class="btn btn-danger">Get News Baby</button>
+
+
+
+  </form>
+ 
+
+<h2 *ngIf="displayBlock">Liste des News</h2>
+<ul *ngFor="let item of newsDemande">
+  <li>{{item.num}} {{item.Title}}</li>
+</ul>
+
+
+

@@ -1,0 +1,24 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+</div>
+
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0"> 
+<ngb-panel title="Conversion">
+  <ng-template ngbPanelContent>
+    <app-conv></app-conv>
+  </ng-template>
+</ngb-panel>
+<ngb-panel>
+  <ng-template ngbPanelTitle>
+    <span>&#9733; <b>News</b> &#9733;</span>
+  </ng-template>
+  <ng-template ngbPanelContent>
+    <app-news></app-news>
+  </ng-template>
+</ngb-panel>
+</ngb-accordion>
+ 

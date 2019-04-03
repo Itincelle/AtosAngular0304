@@ -1,0 +1,14 @@
+
+    <form methode="get" action="">
+        <div class="form-group">
+        <label for="SeE"> La Somme En Euro : </label>
+        <input class="form-control" type="number" #SeE name="SeE" maxlength="20" [(ngModel)]="SommeEnEuro" placeholder="Enter Montant">
+        <small id="emailHelp" class="form-text text-muted">Inserez le montant</small>
+    </div>
+        <button type="submit" (click)="Conversion(SeE.value)" class="btn btn-primary">Euro to Franc</button><br/>
+        <label> Montant en Franc : </label>
+        {{MontantFranc}}
+
+
+
+    </form>
