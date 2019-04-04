@@ -9,11 +9,12 @@ import { Observable } from 'rxjs';
 })
 export class NewsService {
 
-  private _urlProvisoire="./assets/data/news.json"
-  
+  //private _urlProvisoire="./assets/data/news.json"
+  //public _urlProvisoire="http://localhost:8282/news/1" //prb proxy on modify ce lien dur par un autre relatif et on rajoute proxy regarde son dernier push git le 18...mais moi je prefere comme l indien directe
+    public _urlProvisoire='/news/'
     getNews(value) : Observable<INews[]>{
-      
-      return this.http.get<INews[]>(this._urlProvisoire);
+      let _url=this._urlProvisoire+value;
+      return this.http.get<INews[]>(_url);
 
 
       /*
