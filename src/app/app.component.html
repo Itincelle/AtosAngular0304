@@ -3,6 +3,15 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
+  <nav class="navbar navbar-dark bg-dark">
+      <form class="form-inline">
+      
+    <button class="btn btn-primary" routerLink="/employee" routerLinkActive="active">Employee</button>
+    
+    <button  class="btn btn-primary" routerLinkActive="/active">Players</button>
+    
+      </form>
+  </nav>
 
 </div>
 
@@ -21,4 +30,8 @@
   </ng-template>
 </ngb-panel>
 </ngb-accordion>
+
+ 
+
+<router-outlet></router-outlet>
  

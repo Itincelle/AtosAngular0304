@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
 import { NUMBER_FORMAT_REGEXP } from '@angular/common/src/i18n/format_number';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { INews } from 'src/assets/news';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+
+ 
+import { catchError } from 'rxjs/operators'﻿
+import { errorHandler } from '@angular/platform-browser/src/browser';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +18,8 @@ export class NewsService {
     public _urlProvisoire='/news/'
     getNews(value) : Observable<INews[]>{
       let _url=this._urlProvisoire+value;
-      return this.http.get<INews[]>(_url);
+      return this.http.get<INews[]>(_url)
+                   .pipe(catchError(this.errorHandler));
 
 
       /*
@@ -32,4 +37,12 @@ export class NewsService {
 
     }
   constructor(private http : HttpClient) { }
+
+  errorHandler(error : HttpErrorResponse){
+
+    return throwError(error.message || "Server Error")
+  
+  
+  }
 }
+

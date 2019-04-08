@@ -11,10 +11,12 @@ public numN : number;
 public newsDemande = [];
 public displayBlock=false;
 
+public errorMsg : string;
 
 public GettingNews(value){
   
-  this._mesNews.getNews(value).subscribe(data => this.newsDemande=data)
+  this._mesNews.getNews(value).subscribe(data => this.newsDemande=data,
+                                         error => this.errorMsg=error)
   this.displayBlock=true;
  
   } 
